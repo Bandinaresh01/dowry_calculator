@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dowry Prediction App</title>
+    <style>
+        /* General body styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif; /* Sets the font */
+            background-image: url('Female-Hand.png'); /* Background image for the page */
+            background-size: cover; /* Ensures the image covers the viewport */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            background-position: center; /* Centers the image */
+            color: #333; /* Default text color */
+        }
+
+        /* Navigation bar styling */
+        nav {
+            background-color: #444; /* Dark gray background */
+            color: #fff; /* White text */
+            padding: 15px; /* Adds spacing */
+            text-align: center; /* Centers the text */
+            font-size: 18px; /* Adjusts the font size */
+            font-weight: bold; /* Makes the text bold */
+        }
+
+        /* Main heading styling */
+        h1 {
+            text-align: center; /* Centers the heading */
+            margin-top: 20px; /* Adds spacing from the top */
+            color: #709455; /* White text */
+            text-shadow: 2px 2px 4px #000; /* Adds a shadow effect */
+        }
+
+        /* Styling the form container */
+        form {
+            width: 80%; /* Sets the width to 80% of the viewport */
+            max-width: 600px; /* Ensures it doesn't exceed 600px */
+            margin: 20px auto; /* Centers the form */
+            background-color: rgba(198, 209, 206, 0.9); /* Semi-transparent white background */
+            padding: 20px; /* Adds spacing inside the form */
+            border-radius: 10px; /* Rounds the edges */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow */
+        }
+
+        /* Label styling */
+        label {
+            font-weight: bold; /* Makes the labels bold */
+            display: block; /* Ensures each label is on a new line */
+            margin-bottom: 5px; /* Adds spacing below labels */
+        }
+
+        /* Input and select element styling */
+        input, select {
+            width: 100%; /* Makes them span the full width of the form */
+            padding: 10px; /* Adds inner spacing */
+            margin-bottom: 15px; /* Adds spacing below each element */
+            border: 1px solid #ccc; /* Light gray border */
+            border-radius: 5px; /* Slightly rounded edges */
+        }
+
+        /* Button styling */
+        button {
+            background-color: #007BFF; /* Blue background */
+            color: white; /* White text */
+            padding: 10px 15px; /* Adds spacing inside the button */
+            border: none; /* Removes the border */
+            border-radius: 5px; /* Rounds the edges */
+            cursor: pointer; /* Changes the cursor to a pointer on hover */
+            font-size: 16px; /* Adjusts the font size */
+        }
+
+        /* Hover effect for button */
+        button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        /* Footer styling */
+        footer {
+            text-align: center; /* Centers the footer text */
+            margin-top: 20px; /* Adds spacing above the footer */
+            color: #fff; /* White text */
+            background-color: #444; /* Matches the navigation bar */
+            padding: 10px 0; /* Adds spacing inside the footer */
+        }
+
+        /* Highlight class for emphasis */
+        .highlight {
+            font-size: 1.2rem; /* Slightly larger text */
+            color: #007BFF; /* Blue color */
+            font-weight: bold; /* Makes the text bold */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation bar for branding -->
+    <nav>Dowry Prediction Application</nav>
+
+    <!-- Main heading -->
+    <h1>Welcome to the Dowry Prediction App</h1>
+
+    <form method="POST" action="/predict">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+        <br>
+        
+        <label for="material_status">Marital Status:</label>
+        <select id="material_status" name="material_status" required>
+            <option value="First">First Marriage</option>
+            <option value="Second">Second Marriage</option>
+        </select>
+        <br>
+    
+        <label for="education">Education:</label>
+        <select id="education" name="education" required>
+            <option value="Bachelor's">Bachelor's</option>
+            <option value="Master's">Master's</option>
+            <option value="Doctorate">Doctorate</option>
+        </select>
+        <br>
+    
+        <label for="family_wealth">Family Wealth:</label>
+        <input type="number" id="family_wealth" name="family_wealth" required>
+        <br>
+    
+        <label for="income">Income:</label>
+        <input type="number" id="income" name="income" required>
+        <br>
+
+        <!-- Siblings Field -->
+        <label for="siblings">Siblings:</label>
+        <input type="number" id="siblings" name="siblings" required>
+        <br>
+    
+        <label for="job_type">Job Type:</label>
+        <select id="job_type" name="job_type" required>
+            <option value="Business">Business</option>
+            <option value="Engineer">Engineer</option>
+            <option value="Govt Job">Govt Job</option>
+            <option value="Professor">Professor</option>
+            <option value="Researcher">Researcher</option>
+            <option value="Software Dev.">Software Dev.</option>
+            <option value="Teacher">Teacher</option>
+        </select>
+        <br>
+    
+        <label for="locality">Locality:</label>
+        <select id="locality" name="locality" required>
+            <option value="Rural">Rural</option>
+            <option value="Urban">Urban</option>
+        </select>
+        <br>
+    
+        <label for="house">Property Ownership:</label>
+        <select id="house" name="house" required>
+            <option value="No Property">No Property</option>
+            <option value="Owns Flat">Owns Flat</option>
+            <option value="Owns House">Owns House</option>
+        </select>
+        <br>
+    
+        <label for="religious_affiliation">Religious Affiliation:</label>
+        <select id="religious_affiliation" name="religious_affiliation" required>
+            <option value="Hindu">Hindu</option>
+            <option value="Muslim">Muslim</option>
+            <option value="Christian">Christian</option>
+            <option value="Buddhist">Buddhist</option>
+        </select>
+        <br>
+    
+        <button type="submit">Predict</button>
+    </form>
+
+    <!-- Footer with additional information -->
+    <footer>
+        <p>&copy; 2025 Dowry Prediction App. All Rights Reserved.</p>
+        <p class="highlight">Empowering decisions for a better future.</p>
+    </footer>
+</body>
+</html>
