@@ -173,6 +173,10 @@
     
         <button type="submit">Predict</button>
     </form>
+    <!-- Display the prediction -->
+    {% if prediction %}
+    <h3>Prediction: {{ prediction }}</h3>
+    {% endif %}
 
     <!-- Footer with additional information -->
     <footer>

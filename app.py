@@ -1,12 +1,13 @@
 import pickle
 import pandas as pd
 from flask import Flask, request, render_template
+import numpy as np
 
 # Initialize Flask app
 app = Flask(__name__)
 
 # Load the trained model
-with open("model.pkl", "rb") as file:
+with open("C:\programming\machine_learning_projects\host_project_dowry\model.pkl", "rb") as file:
     model = pickle.load(file)
 
 # Feature columns (ensure the order matches the training data)
@@ -62,11 +63,19 @@ def predict():
     input_df = pd.get_dummies(input_df)
     input_df = input_df.reindex(columns=FEATURE_COLUMNS, fill_value=0)
 
-    # Use the model to predict
-    prediction = model.predict(input_df)[0]
+# # Define the input data as a single-row numpy array
+#     input_data = np.array([32, 75122, 11619256, 3, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0]).reshape(1, -1)
 
-    # Return the prediction result
-    return render_template("index.html", prediction=prediction)
+#     # Check the shape to ensure compatibility with the model
+#     print("Input data shape:", input_data.shape)
+
+
+        # Use the model to predict
+    prediction = model.predict(input_df)
+
+        # Return the prediction result
+    return render_template("prediction.html", prediction=prediction)
 
 if __name__ == "__main__":
     app.run(debug=True)
+
